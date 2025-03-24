@@ -42,6 +42,8 @@
         <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\**" /> 
 
         <Compile Remove="Server\Demo\Scenes\Robot\**" /> 
+
+        <Compile Remove="Share\**" /> 
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -50,9 +52,11 @@
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Remove="Server\Demo\Scenes\Robot\**" />
+      <EmbeddedResource Remove="Share\**" />
     </ItemGroup>
     <ItemGroup>
       <None Remove="Server\Demo\Scenes\Robot\**" />
+      <None Remove="Share\**" />
     </ItemGroup>
 
 </Project>
