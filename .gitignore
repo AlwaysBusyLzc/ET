@@ -18,6 +18,7 @@ Opt/
 .svn/
 bin/
 Bin/
+!BIn/runtimes
 obj/
 _ReSharper.CSharp/
 *.opensdf
