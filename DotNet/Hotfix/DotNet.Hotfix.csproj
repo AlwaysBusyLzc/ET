@@ -34,11 +34,25 @@
         <Compile Include="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\**\*.cs">
             <Link>Share\%(RecursiveDir)%(FileName)%(Extension)</Link> 
         </Compile> 
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Hotfix\Client\**" /> 
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Hotfix\Server\**" /> 
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Hotfix\Share\**" /> 
+
+        <Compile Remove="Server\Demo\Scenes\Robot\**" /> 
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
         <ProjectReference Include="..\Loader\DotNet.Loader.csproj" />
         <ProjectReference Include="..\Model\DotNet.Model.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Server\Demo\Scenes\Robot\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Server\Demo\Scenes\Robot\**" />
     </ItemGroup>
 
 </Project>

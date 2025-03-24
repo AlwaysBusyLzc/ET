@@ -34,44 +34,17 @@
         <Link>ETTask/%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
 
-    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Kcp\Kcp.cs">
-      <Link>Kcp\Kcp.cs</Link>
-    </Compile>
-
-    <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Recast\Recast.cs">
-      <Link>Recast\Recast.cs</Link>
-    </Compile>
-
     <Compile Include="..\..\Unity\Library\PackageCache\com.unity.mathematics*\Unity.Mathematics\**\*.cs">
         <Link>Unity.Mathematics/$([System.String]::new(%(RecursiveDir)).Substring($([System.String]::new(%(RecursiveDir)).Indexof("Unity.Mathematics"))).Replace("Unity.Mathematics", ""))/%(FileName)%(Extension)</Link>
     </Compile>
-    </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="..\..\Unity\Assets\Plugins\MacOS\x86_64\libkcp.dylib">
-        <Link>runtimes\osx\native\libkcp.dylib</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="..\..\Unity\Assets\Plugins\MacOS\x86_64\libRecastDll.dylib">
-        <Link>runtimes\osx\native\libRecastDll.dylib</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="..\..\Unity\Assets\Plugins\x86_64\kcp.dll">
-        <Link>runtimes\win\native\kcp.dll</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="..\..\Unity\Assets\Plugins\x86_64\libkcp.so">
-        <Link>runtimes\linux\native\libkcp.so</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="..\..\Unity\Assets\Plugins\x86_64\libRecastDll.so">
-        <Link>runtimes\linux\native\libRecastDll.so</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="..\..\Unity\Assets\Plugins\x86_64\RecastDll.dll">
-        <Link>runtimes\win\native\RecastDll.dll</Link>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+    <Compile Remove="..\..\Unity\Assets\Scripts\ThirdParty\ETTask\**" />
+
+    <Compile Remove="Unity.Mathematics\**" />
+
+    <Compile Remove="Unity.Mathematics1\**" />
+
+    <Compile Include="Unity.Mathematics\PropertyAttribute.cs" />
     </ItemGroup>
 
     <ItemGroup>

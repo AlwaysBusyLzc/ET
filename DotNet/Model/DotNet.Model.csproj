@@ -40,6 +40,18 @@
         <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\**\*.cs"> 
             <Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Client\**" />
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Server\**" />
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Share\**" />
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\Config\**" />
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\ConfigPartial\**" />
+
+        <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\Message\**" />
         
     </ItemGroup> 
     <ItemGroup> 
@@ -47,5 +59,11 @@
         <ProjectReference Include="..\Core\DotNet.Core.csproj" />
         <ProjectReference Include="..\Loader\DotNet.Loader.csproj" />
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
+    </ItemGroup> 
+    <ItemGroup>
+      <Folder Include="Share\Demo\" />
+      <Folder Include="Share\Module\ActorLocation\" />
+      <Folder Include="Share\Module\Actor\" />
+      <Folder Include="Share\Module\Message\" />
     </ItemGroup>
 </Project>
