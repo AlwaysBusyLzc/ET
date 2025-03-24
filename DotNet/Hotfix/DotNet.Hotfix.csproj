@@ -44,6 +44,8 @@
         <Compile Remove="Server\Demo\Scenes\Robot\**" /> 
 
         <Compile Remove="Share\**" /> 
+
+        <Compile Remove="Demo\Scenes\Robot\**" /> 
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -53,10 +55,15 @@
     <ItemGroup>
       <EmbeddedResource Remove="Server\Demo\Scenes\Robot\**" />
       <EmbeddedResource Remove="Share\**" />
+      <EmbeddedResource Remove="Demo\Scenes\Robot\**" />
     </ItemGroup>
     <ItemGroup>
       <None Remove="Server\Demo\Scenes\Robot\**" />
       <None Remove="Share\**" />
+      <None Remove="Demo\Scenes\Robot\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Server\" />
     </ItemGroup>
 
 </Project>

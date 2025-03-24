@@ -61,6 +61,7 @@
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
     </ItemGroup> 
     <ItemGroup>
+      <Folder Include="Server\" />
       <Folder Include="Share\Demo\" />
       <Folder Include="Share\Module\ActorLocation\" />
       <Folder Include="Share\Module\Actor\" />
