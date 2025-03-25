@@ -53,6 +53,10 @@
 
         <Compile Remove="..\..\Unity\Assets\Scripts\Codes\Model\Generate\Server\Message\**" />
         
+        <Compile Remove="Server\**" />
+        
+        <Compile Remove="Share\**" />
+        
     </ItemGroup> 
     <ItemGroup> 
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -61,10 +65,11 @@
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
     </ItemGroup> 
     <ItemGroup>
-      <Folder Include="Server\" />
-      <Folder Include="Share\Demo\" />
-      <Folder Include="Share\Module\ActorLocation\" />
-      <Folder Include="Share\Module\Actor\" />
-      <Folder Include="Share\Module\Message\" />
+      <EmbeddedResource Remove="Server\**" />
+      <EmbeddedResource Remove="Share\**" />
+    </ItemGroup> 
+    <ItemGroup>
+      <None Remove="Server\**" />
+      <None Remove="Share\**" />
     </ItemGroup>
 </Project>

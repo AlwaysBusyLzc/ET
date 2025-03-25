@@ -23,10 +23,10 @@ namespace ET
 
     public static class InnerProto2CS
     {
-        private const string protoDir = "../Unity/Assets/Config/Proto";
+        private const string protoDir = "../Config/Proto";
         private const string clientMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/Client/Message/";
-        private const string serverMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/Server/Message/";
-        private const string clientServerMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/ClientServer/Message/";
+        private const string serverMessagePath = "../DotNet/Model/Generate/Server/Message/";
+        // private const string clientServerMessagePath = "../Unity/Assets/Scripts/Codes/Model/Generate/ClientServer/Message/";
         private static readonly char[] splitChars = { ' ', '\t' };
         private static readonly List<OpcodeInfo> msgOpcode = new List<OpcodeInfo>();
 
@@ -44,10 +44,10 @@ namespace ET
                 Directory.Delete(serverMessagePath, true);
             }
             
-            if (Directory.Exists(clientServerMessagePath))
-            {
-                Directory.Delete(clientServerMessagePath, true);
-            }
+            // if (Directory.Exists(clientServerMessagePath))
+            // {
+            //     Directory.Delete(clientServerMessagePath, true);
+            // }
 
             List<string> list = FileHelper.GetAllFiles(protoDir, "*proto");
             foreach (string s in list)
@@ -191,13 +191,13 @@ namespace ET
             {
                 GenerateCS(sb, clientMessagePath, proto);
                 GenerateCS(sb, serverMessagePath, proto);
-                GenerateCS(sb, clientServerMessagePath, proto);
+                // GenerateCS(sb, clientServerMessagePath, proto);
             }
             
             if (cs.Contains("S"))
             {
                 GenerateCS(sb, serverMessagePath, proto);
-                GenerateCS(sb, clientServerMessagePath, proto);
+                // GenerateCS(sb, clientServerMessagePath, proto);
             }
         }
 

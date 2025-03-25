@@ -54,13 +54,12 @@ namespace ET
     {
         private static string template;
 
-        private const string ClientClassDir = "../Unity/Assets/Scripts/Codes/Model/Generate/Client/Config";
         // 服务端因为机器人的存在必须包含客户端所有配置，所以单独的c字段没有意义,单独的c就表示cs
-        private const string ServerClassDir = "../Unity/Assets/Scripts/Codes/Model/Generate/Server/Config";
-
+        private const string ClientClassDir = "../Unity/Assets/Scripts/Codes/Model/Generate/Client/Config";
+        private const string ServerClassDir = "../DotNet/Model/Generate/Config";
         private const string CSClassDir = "../Unity/Assets/Scripts/Codes/Model/Generate/ClientServer/Config";
 
-        private const string excelDir = "../Unity/Assets/Config/Excel/";
+        private const string xlsxDir = "../Config/Xlsx/";
 
         private const string jsonDir = "../Config/Json/{0}/{1}";
 
@@ -114,7 +113,7 @@ namespace ET
                     Directory.Delete(ServerClassDir, true);
                 }
 
-                List<string> files = FileHelper.GetAllFiles(excelDir);
+                List<string> files = FileHelper.GetAllFiles(xlsxDir);
                 foreach (string path in files)
                 {
                     string fileName = Path.GetFileName(path);
@@ -171,15 +170,15 @@ namespace ET
                     {
                         ExportClass(kv.Key, kv.Value.HeadInfos, ConfigType.s);
                     }
-                    ExportClass(kv.Key, kv.Value.HeadInfos, ConfigType.cs);
+                    // ExportClass(kv.Key, kv.Value.HeadInfos, ConfigType.cs);
                 }
 
                 // 动态编译生成的配置代码
                 configAssemblies[(int) ConfigType.c] = DynamicBuild(ConfigType.c);
                 configAssemblies[(int) ConfigType.s] = DynamicBuild(ConfigType.s);
-                configAssemblies[(int) ConfigType.cs] = DynamicBuild(ConfigType.cs);
+                // configAssemblies[(int) ConfigType.cs] = DynamicBuild(ConfigType.cs);
 
-                List<string> excels = FileHelper.GetAllFiles(excelDir, "*.xlsx");
+                List<string> excels = FileHelper.GetAllFiles(xlsxDir, "*.xlsx");
                 
                 foreach (string path in excels)
                 {
@@ -213,7 +212,7 @@ namespace ET
         private static void ExportExcel(string path)
         {
             string dir = Path.GetDirectoryName(path);
-            string relativePath = Path.GetRelativePath(excelDir, dir);
+            string relativePath = Path.GetRelativePath(xlsxDir, dir);
             string fileName = Path.GetFileName(path);
             if (!fileName.EndsWith(".xlsx") || fileName.StartsWith("~$") || fileName.Contains("#"))
             {
@@ -256,8 +255,8 @@ namespace ET
                 ExportExcelJson(p, fileNameWithoutCS, table, ConfigType.s, relativePath);
                 ExportExcelProtobuf(ConfigType.s, protoName, relativePath);
             }
-            ExportExcelJson(p, fileNameWithoutCS, table, ConfigType.cs, relativePath);
-            ExportExcelProtobuf(ConfigType.cs, protoName, relativePath);
+            // ExportExcelJson(p, fileNameWithoutCS, table, ConfigType.cs, relativePath);
+            // ExportExcelProtobuf(ConfigType.cs, protoName, relativePath);
         }
 
         private static string GetProtoDir(ConfigType configType, string relativeDir)

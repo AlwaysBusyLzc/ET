@@ -39,7 +39,7 @@ namespace ET.Server
                 MongoHelper.Init();
                 ProtobufHelper.Init();
 				
-                Log.Info($"server start........................ {Root.Instance.Scene.Id}");
+                Log.Info($"tool start........................ {Root.Instance.Scene.Id}");
 				
                 switch (Options.Instance.AppType)
                 {
