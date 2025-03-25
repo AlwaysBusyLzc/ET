@@ -33,6 +33,7 @@
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
         <Compile Remove="..\..\Unity\Assets\Scripts\Core\**" />
+        <Compile Remove="Core\**" />
     </ItemGroup>
     
     <ItemGroup>
@@ -41,7 +42,11 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="Core\" />
+      <EmbeddedResource Remove="Core\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="Core\**" />
     </ItemGroup>
 
 </Project>
