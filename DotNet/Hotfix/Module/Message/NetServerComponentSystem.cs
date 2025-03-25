@@ -10,7 +10,7 @@ namespace ET.Server
         {
             protected override void Awake(NetServerComponent self, IPEndPoint address)
             {
-                self.ServiceId = NetServices.Instance.AddService(new KService(address, ServiceType.Outer));
+                self.ServiceId = NetServices.Instance.AddService(new TService(address, ServiceType.Outer));
                 NetServices.Instance.RegisterAcceptCallback(self.ServiceId, self.OnAccept);
                 NetServices.Instance.RegisterReadCallback(self.ServiceId, self.OnRead);
                 NetServices.Instance.RegisterErrorCallback(self.ServiceId, self.OnError);
