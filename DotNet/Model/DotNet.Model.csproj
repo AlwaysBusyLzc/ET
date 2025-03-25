@@ -71,5 +71,9 @@
     <ItemGroup>
       <None Remove="Server\**" />
       <None Remove="Share\**" />
+    </ItemGroup> 
+    <ItemGroup>
+      <Folder Include="Generate\Config\" />
+      <Folder Include="Generate\Message\" />
     </ItemGroup>
 </Project>
