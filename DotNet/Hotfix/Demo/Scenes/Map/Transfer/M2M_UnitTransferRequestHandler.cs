@@ -25,6 +25,7 @@ namespace ET.Server
 			unit.Position = new float3(-10, 0, -10);
 			
 			unit.AddComponent<MailBoxComponent>();
+			await unit.AddLocation();
 
 			// 通知客户端开始切场景
 			M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() {SceneInstanceId = scene.InstanceId, SceneName = scene.Name};
