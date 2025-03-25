@@ -40,7 +40,7 @@
 
             await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent1());
             await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent2());
-            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent3());
+            // await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent3());
         }
     }
 }

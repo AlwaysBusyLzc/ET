@@ -10,7 +10,7 @@ namespace ET
             Root.Instance.Scene.AddComponent<MessageDispatcherComponent>();
             Root.Instance.Scene.AddComponent<NumericWatcherComponent>();
             Root.Instance.Scene.AddComponent<AIDispatcherComponent>();
-            Root.Instance.Scene.AddComponent<ClientSceneManagerComponent>();
+            // Root.Instance.Scene.AddComponent<ClientSceneManagerComponent>();
 
             await ETTask.CompletedTask;
         }
